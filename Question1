@@ -1,0 +1,19 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+root = Node("check_build_script")
+root.left = Node("lint")
+root.right = Node("compile")
+root.right.right = Node("package")
+root.right.right.right = Node("test")
+
+def preorder(root):
+    if root:
+        print(root.data)
+        preorder(root.left)
+        preorder(root.right)
+
+preorder(root)
